@@ -36,7 +36,7 @@ int main() {
                 break;
             case 4: {
                 int size = StrList_size(Strlist);
-                printf("%d", size);
+                printf("%d\n", size);
                 break;
             }
             case 5: {
@@ -47,7 +47,7 @@ int main() {
             }
             case 6: {
                 int len = StrList_printLen(Strlist);
-                printf("%d", len);
+                printf("%d\n", len);
                 break;
             }
             case 7: {
@@ -55,7 +55,7 @@ int main() {
                 word = (char *)malloc(STRING_SIZE1 * sizeof(char));  
                 scanf("%s", word);
                 int count = StrList_count(Strlist, word);
-                printf("%d", count);
+                printf("%d\n", count);
                 free(word);
                 break;
             }

@@ -1,7 +1,7 @@
-all: main
+all: StrList
 
-main: main.o lib.a
-	gcc -Wall -g main.o lib.a -o main
+StrList: main.o lib.a
+	gcc -Wall -g main.o lib.a -o StrList
 
 main.o: main.c StrList.h
 	gcc -Wall -g -c main.c
@@ -13,6 +13,6 @@ lib.a: StrList.o
 	ar -rcs lib.a StrList.o
 
 clean:
-	rm -f *.o *.a main
+	rm -f *.o *.a StrList 
 
 .PHONY: all clean

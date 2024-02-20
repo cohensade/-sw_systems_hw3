@@ -104,6 +104,12 @@ char* StrList_firstData(const StrList* StrList){
 
 void StrList_print(const StrList* StrList) {
     const Node* current = StrList->_head; // Start from the _head of the list
+    if (current==NULL)
+    {
+        printf("\n");
+        
+    }
+    
     // pass on the list and print each string
     while (current != NULL) {
         if (current->_next!=NULL){
@@ -111,7 +117,7 @@ void StrList_print(const StrList* StrList) {
         current = current->_next; // Move to the next node
     }
     if (current->_next==NULL){
-        printf("%s", current->_data); // Print the string stored in the current node
+        printf("%s\n", current->_data); // Print the string stored in the current node
         current = current->_next; // Move to the next node
     }
 }
@@ -134,6 +140,7 @@ void StrList_printAt(const StrList* StrList, int index) {
     }
 }
 
+// Return the amount of chars in the list.
 int StrList_printLen(const StrList* StrList) {
      Node* current = StrList->_head; // Start from the _head of the list
     int totalChars = 0;
