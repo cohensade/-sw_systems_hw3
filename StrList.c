@@ -46,6 +46,7 @@ void StrList_free(StrList* StrList){
     // Free memory for each node
     while (current != NULL) {
         temp = current->_next;
+        free(current->_data); // Free memory for the string data
         free(current);
         current = temp;
     }
@@ -190,6 +191,7 @@ void StrList_removeAt(StrList* StrList, int index) {
             // Otherwise, update the next pointer of the previous node
             prev->_next = current->_next;
         }
+        free(current->_data); // Free memory for the string data
         free(current); // Free memory for the removed node
         StrList->_size--; // Update the size of the list
     }
